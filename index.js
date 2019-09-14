@@ -7,12 +7,12 @@ try {
     switch (os_version) {
         case 'darwin':
         case 'linux':
-            exec.exec(`./${os_version}.sh ${core.getInput('version')}`).catch(() => {
-                core.setFailed('Configuration failed');
-            });
-            exec.exec(`./composer.sh`).catch(() => {
-                core.setFailed('Composer installation failed');
-            });
+            exec
+                .exec(`./${os_version}.sh ${core.getInput('version')}`)
+                .then(() => return exec.exec(`./composer.sh`)
+                .catch(() => {
+                    core.setFailed('Configuration failed');
+                });
             break;
 
         default:
