@@ -17,3 +17,6 @@ jobs:
             -
                 name: Display PHP version
                 run: 'php -v'
+            -
+                name: Display Composer version
+                run: 'composer --version'
