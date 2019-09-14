@@ -6,12 +6,8 @@ const os_version = process.platform;
 try {
     switch (os_version) {
         case 'darwin':
-            console.log(os_version);
-            console.log(core.getInput('version'));
-            break;
-
         case 'linux':
-            exec.exec(`./linux.sh ${core.getInput('version')}`).catch(() => {
+            exec.exec(`./${os_version}.sh ${core.getInput('version')}`).catch(() => {
                 core.setFailed('Configuration failed');
             });
             break;
