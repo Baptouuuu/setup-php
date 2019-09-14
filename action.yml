@@ -1,0 +1,10 @@
+name: 'Setup PHP'
+description: 'Install PHP to a specific version to allow building a continuous integration'
+inputs:
+    version:
+        description: 'The PHP version to setup'
+        required: true
+        default: '7.3'
+runs:
+    using: 'node12'
+    main: 'index.js'
