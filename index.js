@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const exec = require("@actions/exec/lib/exec");
 const os_version = process.platform;
 
 try {
@@ -10,8 +11,7 @@ try {
             break;
 
         case 'linux':
-            console.log(os_version);
-            console.log(core.getInput('version'));
+            exec.exec(`./linux.sh ${core.getInput('version')}`);
             break;
 
         default:
