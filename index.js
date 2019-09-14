@@ -9,7 +9,7 @@ try {
         case 'linux':
             exec
                 .exec(`./${os_version}.sh ${core.getInput('version')}`)
-                .then(() => return exec.exec(`./composer.sh`)
+                .then(() => exec.exec(`./composer.sh`)
                 .catch(() => {
                     core.setFailed('Configuration failed');
                 });
