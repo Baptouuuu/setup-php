@@ -8,7 +8,7 @@ try {
         case 'darwin':
         case 'linux':
             exec
-                .exec(`./${os_version}.sh ${core.getInput('version')}`)
+                .exec(`${__dirname}/${os_version}.sh ${core.getInput('version')}`)
                 .catch((e) => {
                     console.log(e);
                     core.setFailed('Configuration failed');
