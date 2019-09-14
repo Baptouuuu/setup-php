@@ -9,7 +9,8 @@ try {
         case 'linux':
             exec
                 .exec(`./${os_version}.sh ${core.getInput('version')}`)
-                .catch(() => {
+                .catch((e) => {
+                    console.log(e);
                     core.setFailed('Configuration failed');
                 });
             break;
