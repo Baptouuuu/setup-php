@@ -11,7 +11,11 @@ try {
             break;
 
         case 'linux':
-            exec.exec(`./linux.sh ${core.getInput('version')}`);
+            exec.exec(`./linux.sh ${core.getInput('version')}`).then((exitCode) => {
+                if (exitCode !== 0) {
+                    core.setFailed('Configuration failed');
+                }
+            });
             break;
 
         default:
