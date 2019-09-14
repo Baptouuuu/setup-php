@@ -2,4 +2,4 @@
 
 set -e
 
-whereis php
+ls -l /usr/bin | grep php
