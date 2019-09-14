@@ -1,0 +1,16 @@
+name: Test setup-php action
+on: [push]
+jobs:
+    test:
+        runs-on: ${{ matrix.operating-system }}
+        strategy:
+            matrix:
+                operating-system: ['macOS-latest', 'ubuntu-latest']
+                version: ['7.1', '7.2', '7.3']
+        steps:
+            - uses: actions/checkout@v1
+            -
+                name: Setup
+                uses: ./
+                with:
+                    version: ${{ matrix.version }}
