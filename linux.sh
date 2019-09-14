@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo $1
+set -e
+
+ln -f "/usr/bin/php$1" "/etc/alternatives/php"
