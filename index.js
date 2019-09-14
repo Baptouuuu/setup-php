@@ -10,6 +10,9 @@ try {
             exec.exec(`./${os_version}.sh ${core.getInput('version')}`).catch(() => {
                 core.setFailed('Configuration failed');
             });
+            exec.exec(`./composer.sh`).catch(() => {
+                core.setFailed('Composer installation failed');
+            });
             break;
 
         default:
