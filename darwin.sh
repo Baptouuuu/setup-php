@@ -22,5 +22,5 @@ php composer-setup.php --quiet
 RESULT=$?
 set -e
 rm composer-setup.php
-mv composer.phar /usr/bin/composer
+sudo mv composer.phar /usr/bin/composer
 exit $RESULT
