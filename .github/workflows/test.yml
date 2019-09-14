@@ -14,3 +14,6 @@ jobs:
                 uses: ./
                 with:
                     version: ${{ matrix.version }}
+            -
+                name: Display PHP version
+                run: 'php -v'
