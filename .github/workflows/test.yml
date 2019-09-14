@@ -16,7 +16,7 @@ jobs:
                     version: ${{ matrix.version }}
             -
                 name: Display PHP version
-                run: 'php -r "if (PHP_MAJOR_VERSION.\'.\'.PHP_MINOR_VERSION !== \'${{ matrix.version }}\') exit 1;"'
+                run: 'php -v'
             -
                 name: Display Composer version
                 run: 'composer --version'
