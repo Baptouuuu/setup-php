@@ -4,3 +4,4 @@ set -e
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install "php@$1"
+brew services start "php@$1"
